@@ -1,0 +1,13 @@
+{
+    "python.defaultInterpreterPath": "/Users/ray/miniforge3/envs/grokaibot/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "terminal.integrated.env.osx": {
+        "PATH": "/Users/ray/miniforge3/envs/grokaibot/bin:${env:PATH}"
+    },
+    "python.analysis.extraPaths": [
+        "/Users/ray/miniforge3/envs/grokaibot/lib/python3.12/site-packages"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.analysis.autoImportCompletions": true
+}
