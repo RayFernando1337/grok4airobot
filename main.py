@@ -7,15 +7,11 @@ from pipecat.frames.frames import EndFrame, LLMMessagesFrame
 from pipecat.pipeline.pipeline import Pipeline
 from pipecat.pipeline.runner import PipelineRunner
 from pipecat.pipeline.task import PipelineParams, PipelineTask
-from pipecat.processors.aggregators.llm_response import (
-    LLMAssistantResponseAggregator, LLMUserResponseAggregator
-)
-from pipecat.transports.base_output import TransportParams
-from pipecat.vad.silero import SileroVADAnalyzer
+from pipecat.processors.aggregators.llm_response import LLMUserResponseAggregator
 from pipecat.transports.local.audio import LocalAudioTransport
-from pipecat.services.assemblyai import AssemblyAISTTService
-from pipecat.services.openai import OpenAILLMService
-from pipecat.services.elevenlabs import ElevenLabsTTSService
+from pipecat.services.assemblyai.stt import AssemblyAISTTService
+from pipecat.services.openai.llm import OpenAILLMService
+from pipecat.services.elevenlabs.tts import ElevenLabsTTSService
 
 # Configure logging
 logger.remove(0)
@@ -30,16 +26,8 @@ except FileNotFoundError:
 
 
 async def main():
-    # Initialize transport with VAD
-    transport = LocalAudioTransport(
-        TransportParams(
-            audio_in_enabled=True,
-            audio_out_enabled=True,
-            vad_enabled=True,
-            vad_analyzer=SileroVADAnalyzer(),
-            vad_audio_passthrough=True
-        )
-    )
+    # Initialize transport (basic setup without VAD for now)
+    transport = LocalAudioTransport()
     
     # Initialize STT service
     stt = AssemblyAISTTService(

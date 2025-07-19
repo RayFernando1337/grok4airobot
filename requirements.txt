@@ -1,0 +1,17 @@
+# Core AI Framework
+pipecat-ai==0.0.76
+
+# Logging
+loguru==0.7.3
+
+# AI Services
+openai==1.74.1
+
+# Optional: For local audio support (requires system dependencies)
+# pipecat-ai[local]  # Requires: brew install portaudio (macOS)
+
+# Optional: For VAD support
+# pipecat-ai[silero]
+
+# Note: The pipecat==0.3.0 package is a units library, not the AI framework
+# The AI framework is accessed through pipecat-ai imports

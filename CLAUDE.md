@@ -50,10 +50,16 @@ Use Ctrl-C to stop the application.
 - `ELEVENLABS_API_KEY`: For text-to-speech service
 
 ### Dependencies
-The project uses the Pipecat framework. Install dependencies with:
+Install dependencies using the requirements file:
 ```bash
-pip install pipecat-ai
+pip install -r requirements.txt
 ```
+
+**Optional Dependencies:**
+- For local audio: `pip install pipecat-ai[local]` (requires `brew install portaudio` on macOS)
+- For VAD support: `pip install pipecat-ai[silero]`
+
+**Note:** The environment contains both `pipecat` (units library) and `pipecat-ai` (AI framework)
 
 ## Code Patterns
 
